@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.0.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd
+		http://www.springframework.org/schema/data/jpa
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd">
+
+	<description>Spring公共配置</description>
+
+	<!-- 扫描加载除了@Controller以外的组件 -->
+	<context:component-scan base-package="com.ltmonitor.dao">
+	</context:component-scan>
+	<context:component-scan base-package="com.ltmonitor.service">
+	</context:component-scan>
+	<context:component-scan base-package="com.ltmonitor.jt809.service">
+	</context:component-scan>
+	<!-- 定义事务管理器 -->
+
+
+	<!-- 注解方式配置事物 -->
+
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+
+	<bean id="baseIbatisDao" class="com.ltmonitor.dao.impl.BaseIbatisDao">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+
+	<!-- 使用annotation定义事务 -->
+	<!-- <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> 
+		<property name="dataSource" ref="dataSource" /> </bean> <tx:annotation-driven 
+		transaction-manager="transactionManager" proxy-target-class="true" /> -->
+
+	<util:properties id="config" location="classpath:/config.properties" />
+
+	<bean id="t809Manager" class="com.ltmonitor.jt809.app.T809Manager"
+		init-method="init">
+	</bean>
+
+	<bean id="jt809CommandParseService" class="com.ltmonitor.jt809.service.impl.JT809CommandParseService"
+		init-method="start">
+	</bean>
+
+	<bean id="transferService" class="com.ltmonitor.jt809.service.impl.TransferService" init-method="startTransfer"  destroy-method="stopTransfer">
+	</bean>
+
+
+	<!-- production环境 -->
+	<context:property-placeholder
+		ignore-resource-not-found="false" location="classpath*:/jdbc_mysql.properties" />
+
+	<!-- 数据源配置,使用应用内的C3P0数据库连接池 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${jdbc.driver}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+
+</beans>
