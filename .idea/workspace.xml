@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bfca953-9609-4e22-a28a-f7cc914b4093" name="Default Changelist" comment="" />
+    <list default="true" id="8bfca953-9609-4e22-a28a-f7cc914b4093" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ltmonitor/jt809/app/MainApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="122" selection-start-line="122" selection-end-line="122" />
+            <state relative-caret-position="-286">
+              <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
               <folding>
                 <element signature="method#encrypt#0;class#MainApp#0" />
               </folding>
@@ -101,7 +103,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1912" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -113,8 +115,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -168,6 +170,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.MainApp" />
+      <item itemvalue="Application.Tools" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainApp" />
@@ -187,24 +193,25 @@
       <updated>1567676996819</updated>
       <workItem from="1567676999828" duration="21792000" />
       <workItem from="1567759898990" duration="5393000" />
-      <workItem from="1567775202968" duration="109000" />
+      <workItem from="1567775202968" duration="1477000" />
+      <workItem from="1567861338680" duration="90000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27294000" />
+    <option name="totallyTimeSpent" value="28752000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13344051" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13504823" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4749722" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.36151278" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24694104" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.36151278" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -611,8 +618,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ltmonitor/jt809/app/MainApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="122" selection-start-line="122" selection-end-line="122" />
+        <state relative-caret-position="-286">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
           <folding>
             <element signature="method#encrypt#0;class#MainApp#0" />
           </folding>
